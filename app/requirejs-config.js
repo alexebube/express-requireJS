@@ -4,8 +4,10 @@
 function RequireJSConfig(){
 	var baseConfig = {
 		baseUrl: 'app',
-		path: {
-
+		paths: {
+			'main':'server',
+			'module':'server/modules',
+			'controller':'server/modules/controllers'
 		},
 		nodeRequire: require
 	}
