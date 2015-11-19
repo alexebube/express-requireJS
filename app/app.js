@@ -8,4 +8,8 @@ var requirejs = require('requirejs');
 // Call require JS config
 requirejs.config(requireJSConfig());
 
-requirejs(['scripts/index']);
+requirejs(['main/server'], function(main){
+
+	var app = new main.Server();
+	app.run();
+});

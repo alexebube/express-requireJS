@@ -1,4 +1,25 @@
-define(['express', 'exports', 'body-parser', 'lodash'], function(express, exports, bodyParser, _){
+/**
+ * Server JS file that fires the express server and initilize routes and middleware
+ * @param  {Object} express    Express module
+ * @param  {Object} exports    CommonJS exports module
+ * @param  {Object} bodyParser Body Parser middleware
+ * @param  {Object} _          lodash utility module
+ * @param  {function} routes)    {	function   Server() {		this.app [description]
+ * @return {Object}            Server Object
+ */
+define([
+	'express', 
+	'exports', 
+	'body-parser', 
+	'lodash',
+	'main/routes'
+], function(
+	express, 
+	exports, 
+	bodyParser, 
+	_,
+	routes
+) {
 
 	function Server() {
 		this.app = express();
@@ -7,16 +28,12 @@ define(['express', 'exports', 'body-parser', 'lodash'], function(express, export
 
 	Server.prototype.configureServer = function(){
 		var app = this.app;
-
 		app.use(bodyParser.json());
-	};
-
-	Server.prototype.init = function(){
-		_.bind(this.configureServer, this);
+		app.use('/api',routes);
 	};
 
 	Server.prototype.run = function() {
-		this.init();
+		this.configureServer();
 		this.app.listen(this.port);
 		console.log('Server running at http://localhost:'+ this.port +'/');
 	};
