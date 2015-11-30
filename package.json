@@ -14,7 +14,9 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "lodash": "^3.10.1",
-    "requirejs": "^2.1.20"
+    "mariasql": "^0.2.5",
+    "requirejs": "^2.1.20",
+    "sequelize": "^3.14.0"
   },
   "devDependencies": {}
 }
