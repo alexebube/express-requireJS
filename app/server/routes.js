@@ -3,7 +3,7 @@
  * @param  {[Object]} express [description]
  * @param  {Object} _       [description]
  * @param  {[Object]} api_v1) {	var        api [description]
- * @return {[function]}         [rount funtion]
+ * @return {[function]}         [route funtion]
  */
 define(['express', 'lodash', 'controller/api/index'], function(express, _, api_v1) {
 
