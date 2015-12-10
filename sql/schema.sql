@@ -15,5 +15,7 @@ CREATE TABLE `Users` (
 	`username` VARCHAR(255) NOT NULL,
 	`password` VARCHAR(255) NOT NULL,
 	`createdOn` datetime NOT NULL,
-	PRIMARY KEY(`userID`)
+	PRIMARY KEY(`userID`),
+	KEY `createdOn_idx` (`createdOn`),
+	UNIQUE (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
