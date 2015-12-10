@@ -8,14 +8,12 @@
  * @return {Object}            Server Object
  */
 define([
-	'express', 
-	'exports', 
+	'express',
 	'body-parser', 
 	'lodash',
 	'main/routes'
 ], function(
 	express, 
-	exports, 
 	bodyParser, 
 	_,
 	routes
@@ -38,5 +36,5 @@ define([
 		console.log('Server running at http://localhost:'+ this.port +'/');
 	};
 
-	exports.Server = Server;
+	return Server;
 });
