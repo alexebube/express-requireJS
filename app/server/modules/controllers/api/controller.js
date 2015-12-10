@@ -1,10 +1,15 @@
-define([], function(){
+define(['service/user_service'], function(userService){
 	
-	function finder(req, res, next) {
-		res.send('Api route running')
-		next();
+	function findAll(req, res, next) {
+		userService.getUsers().then(function(results){
+			console.log(results);
+			res.send(results);
+			next();
+		}).catch(function(error){
+			next(error);
+		});
 	}
 
-	return finder;
+	return findAll;
 
 });
