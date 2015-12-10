@@ -11,7 +11,7 @@ module.exports = function(grunt){
 				connection: {
 					host: '<%= db.database.host %>',
 					port: '<%= db.database.port %>',
-					user: '<%= db.database.username %>',
+					user: '<%= db.database.user %>',
 					password: '<%= db.database.password %>',
 					database: '<%= db.database.database %>',
 					multipleStatements: true
