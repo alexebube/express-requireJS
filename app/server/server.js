@@ -1,11 +1,12 @@
 /**
- * Server JS file that fires the express server and initilize routes and middleware
- * @param  {Object} express    Express module
- * @param  {Object} exports    CommonJS exports module
- * @param  {Object} bodyParser Body Parser middleware
- * @param  {Object} _          lodash utility module
- * @param  {function} routes)    {	function   Server() {		this.app [description]
- * @return {Object}            Server Object
+ * Server module that instantiates the express server
+ * Initilize routes and middleware.
+ * 
+ * @module Server
+ * @param {Object} express -    express module
+ * @param {Object} bodyParser - body Parser middleware
+ * @param {Object} lodash  -    lodash utility module
+ * @param {function} routes -   routes
  */
 define([
 	'express',
@@ -18,18 +19,28 @@ define([
 	_,
 	routes
 ) {
-
+	/**
+	 * Server constructor.
+	 * Representing a Server Class
+	 * @constructor
+	 */
 	function Server() {
 		this.app = express();
 		this.port = port = process.env.PORT || 4444;
 	}
 
+	/**
+	 * configureServer method
+	 */
 	Server.prototype.configureServer = function(){
 		var app = this.app;
 		app.use(bodyParser.json());
 		app.use('/api',routes);
 	};
 
+	/**
+	 * run method
+	 */
 	Server.prototype.run = function() {
 		this.configureServer();
 		this.app.listen(this.port);
