@@ -1,4 +1,8 @@
-define(['service/user_service'], function(userService){
+define([
+	'service/user_service'
+], function(
+	userService
+){
 	
 	function findAll(req, res, next) {
 		userService.getUsers().then(function(results){
