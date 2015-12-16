@@ -15,8 +15,16 @@ function RequireJSConfig(){
 			'service': 'server/modules/services/service',
 			'text': '../node_modules/requirejs-plugins/lib/text',
 			'json': '../node_modules/requirejs-plugins/src/json',
+			'spec': '../spec'
 		},
-		nodeRequire: require
+		nodeRequire: require,
+		packages: [
+	        {
+	            name: "squirejs",
+	            location: "../node_modules/squirejs",
+	            main: "src/Squire"
+	        }
+    	]
 	}
 
 	return baseConfig;
