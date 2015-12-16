@@ -1,6 +1,8 @@
 module.exports = function(grunt){
 
 	grunt.loadNpmTasks('grunt-mysql-runfile');
+	grunt.loadNpmTasks('grunt-mocha-test');
+	grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.initConfig({
 
@@ -23,11 +25,36 @@ module.exports = function(grunt){
             sample: {
             	src: ['sql/sampleDB.sql']
             }
-		}
+		},
+
+		mochaTest: {
+			test: {
+				options: {
+			    	reporter: 'spec',
+			    	captureFile: 'results.txt',
+			    	quiet: false,
+			    	clearRequireCache: false
+		    	},
+		    	src: ['spec/**/*.js']
+		    }
+		},
+
+		jsdoc : {
+	        dist : {
+	            src: ['app/server/**/*.js', 'spec/**/*.js'],
+	            options: {
+	                destination: 'doc'
+	            }
+	        }
+	    }
 	});
 
 	grunt.registerTask('db:setup','Setting up SQL Schema and adding sample data',[
 		'mysqlrunfile:tables',
 		'mysqlrunfile:sample'
 	]);
+
+	grunt.registerTask('test', 'Run unit tests', ['mochaTest']);
+
+	grunt.registerTask('doc', 'Generate documentation', ['jsdoc']);
 };
