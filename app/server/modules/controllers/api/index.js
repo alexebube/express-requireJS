@@ -1,4 +1,10 @@
-define(['express','controller/api/controller'], function(express, apiController){
+define([
+	'express',
+	'controller/api/controller'
+], function(
+	express, 
+	apiController
+) {
 
 	var router = express.Router();
 
