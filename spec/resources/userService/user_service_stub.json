@@ -1,0 +1,64 @@
+{
+	"user": {
+		"userID":3,
+		"firstName":"Ashton",
+		"middleName":"Brenden",
+		"lastName":"Cleveland",
+		"email":"fermentum@semsempererat.edu",
+		"phoneNumber":"(924) 509-8369",
+		"streetAddress":"4862 Nulla Rd.",
+		"city":"Topeka",
+		"state":"Kansas",
+		"zipCode":"75221",
+		"username":"Colton.Finley",
+		"password":"FRZ56ESM0GG",
+		"createdOn":"2015-08-29T05:41:44.000Z"
+	},
+	"users": [
+		{
+			"userID":1,
+			"firstName":"Ashton",
+			"middleName":"Brenden",
+			"lastName":"Cleveland",
+			"email":"fermentum@semsempererat.edu",
+			"phoneNumber":"(924) 509-8369",
+			"streetAddress":"4862 Nulla Rd.",
+			"city":"Topeka",
+			"state":"Kansas",
+			"zipCode":"75221",
+			"username":"Colton.Finley",
+			"password":"FRZ56ESM0GG",
+			"createdOn":"2015-08-29T05:41:44.000Z"
+		},
+		{
+			"userID":2,
+			"firstName":"Ashton",
+			"middleName":"Brenden",
+			"lastName":"Cleveland",
+			"email":"fermentum@semsempererat.edu",
+			"phoneNumber":"(924) 509-8369",
+			"streetAddress":"4862 Nulla Rd.",
+			"city":"Topeka",
+			"state":"Kansas",
+			"zipCode":"75221",
+			"username":"Colton.Finley",
+			"password":"FRZ56ESM0GG",
+			"createdOn":"2015-08-29T05:41:44.000Z"
+		},
+		{
+			"userID":3,
+			"firstName":"Ashton",
+			"middleName":"Brenden",
+			"lastName":"Cleveland",
+			"email":"fermentum@semsempererat.edu",
+			"phoneNumber":"(924) 509-8369",
+			"streetAddress":"4862 Nulla Rd.",
+			"city":"Topeka",
+			"state":"Kansas",
+			"zipCode":"75221",
+			"username":"Colton.Finley",
+			"password":"FRZ56ESM0GG",
+			"createdOn":"2015-08-29T05:41:44.000Z"
+		}
+	]
+}
