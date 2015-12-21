@@ -30,7 +30,8 @@ define([
 	}
 
 	/**
-	 * configureServer method
+	 * configureServer
+	 * @method configureServer
 	 */
 	Server.prototype.configureServer = function(){
 		var app = this.app;
@@ -39,7 +40,8 @@ define([
 	};
 
 	/**
-	 * run method
+	 * run
+	 * @method run
 	 */
 	Server.prototype.run = function() {
 		this.configureServer();
