@@ -2,9 +2,9 @@
  * Main Route Module that instantiates express route
  * 
  * @module main/routes
- * @param {Object} express - express module
- * @param {Object} lodash -  lodash utility module
- * @param {Object} api_v1 -  controller
+ * @requires express
+ * @requires controller/api/index
+ * @requires lodash
  * @return {function} ap1 -  route function
  */
 define([

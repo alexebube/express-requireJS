@@ -3,10 +3,10 @@
  * Initilize routes and middleware.
  * 
  * @module Server
- * @param {Object} express -    express module
- * @param {Object} bodyParser - body Parser middleware
- * @param {Object} lodash  -    lodash utility module
- * @param {function} routes -   routes
+ * @requires express
+ * @requires bodyParser middleware
+ * @requires lodash
+ * @requires main/routes
  */
 define([
 	'express',
@@ -30,17 +30,18 @@ define([
 	}
 
 	/**
-	 * configureServer
+	 * Configure the express middleware and routes
 	 * @method configureServer
 	 */
 	Server.prototype.configureServer = function(){
 		var app = this.app;
 		app.use(bodyParser.json());
 		app.use('/api',routes);
+		app.use('/docs', express.static('dist/doc/requirejs-node/0.0.1/'));
 	};
 
 	/**
-	 * run
+	 * run express app
 	 * @method run
 	 */
 	Server.prototype.run = function() {

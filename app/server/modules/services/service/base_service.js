@@ -6,7 +6,7 @@
 define([], function(){
 
 	/**
-	 * [BaseService description]
+	 * Base Service constructor
 	 *
 	 * @constructor
 	 * @param {object} dataService - sequelize data model
@@ -18,6 +18,11 @@ define([], function(){
 		};
 	};
 
+	/**
+	 * Retrieve all record from the database
+	 * @method get
+	 * @return {Promise} Promise with all record
+	 */
 	BaseService.prototype.get = function(){
 		var dataService = this.getDataService();
 		return dataService.find().then(function(result){
@@ -25,6 +30,12 @@ define([], function(){
 		});
 	};
 
+	/**
+	 * Retrieve a record from the database by id - primaryKey 
+	 * @method getById
+	 * @param {Integer} id - primaryKey
+	 * @return {Promise} Promise with the record
+	 */
 	BaseService.prototype.getById = function(id){
 		var dataService = this.getDataService();
 		return dataService.findById(id).then(function(result){

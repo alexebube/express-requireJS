@@ -1,5 +1,6 @@
 module.exports = function(grunt){
 
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-mysql-runfile');
 	grunt.loadNpmTasks('grunt-mocha-test');
 	grunt.loadNpmTasks('grunt-jsdoc');
@@ -39,13 +40,19 @@ module.exports = function(grunt){
 		    }
 		},
 
-		jsdoc : {
+		jsdoc: {
 	        dist : {
 	            src: ['app/server/**/*.js', 'spec/**/*.js'],
 	            options: {
-	                destination: 'doc'
+	                destination: 'dist/doc',
+	                package: 'package.json',
+	                readme: 'README.md'
 	            }
 	        }
+	    },
+
+	    clean: {
+	    	doc: ['dist/doc/*']
 	    }
 	});
 
@@ -56,5 +63,5 @@ module.exports = function(grunt){
 
 	grunt.registerTask('test', 'Run unit tests', ['mochaTest']);
 
-	grunt.registerTask('doc', 'Generate documentation', ['jsdoc']);
+	grunt.registerTask('doc', 'Generate documentation', ['clean:doc','jsdoc']);
 };

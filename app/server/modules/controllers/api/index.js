@@ -1,3 +1,10 @@
+/**
+ * Initializes api routes through express routes
+ * 
+ * @module controller/api/index
+ * @requires express
+ * @requires controller/api/controller
+ */
 define([
 	'express',
 	'controller/api/controller'
